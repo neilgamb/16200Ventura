@@ -74,6 +74,18 @@ class Template extends React.Component {
 
   }
 
+  initMap() {
+    var uluru = {lat: -25.363, lng: 131.044};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 4,
+      center: uluru
+    });
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map
+    });
+  }
+
   render() {
     const siteTitle = this.props.data.site.siteMetadata.title
     const siteDescription = this.props.data.site.siteMetadata.description
@@ -83,6 +95,7 @@ class Template extends React.Component {
         <Helmet>
             <title>{siteTitle}</title>
             <meta name="description" content={siteDescription} />
+            <script src="https://use.fontawesome.com/9be3235021.js"></script>
         </Helmet>
 
         <div id="wrapper">

@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Starter - Dimension by HTML5 UP",
-    author: "Hunter Chang",
-    description: "A Gatsby.js Starter based on Dimension by HTML5 UP"
+    title: "16200 Ventura",
+    author: "Soma Capital Partners",
+    description: "Executive co-working suites in Encino, California"
   },
   pathPrefix: '/',
   plugins: [

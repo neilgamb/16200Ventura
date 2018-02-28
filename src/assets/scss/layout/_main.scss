@@ -45,6 +45,21 @@
 				display: block !important;
 			}
 
+			.contact-wrapper {
+				display: flex;
+				flex-direction: row;
+				margin-bottom: 40px;
+				.contact {
+					width: 50%;
+					h3 {
+						margin: 0;
+					}
+					p {
+						margin: 0;
+					}
+				}
+			}
+
 			.close {
 				display: block;
 				position: absolute;
@@ -88,9 +103,42 @@
 
 		}
 
+		#location {
+			width: 60rem;
+			h2 {
+				margin-bottom: 1rem;
+			}
+			.address {
+				margin-bottom: 20px;
+				p {
+					margin: 0;
+				}
+			}
+			.google-map {
+				width: 100%;
+				height: 600px;
+				margin-bottom: 20px;
+				#marker {
+					width: 100px;
+					height: 20px;
+					color: black;
+					border: 1px solid black;
+				}
+			}
+		}
+
 		@include breakpoint(small) {
 			article {
 				@include padding(2rem, 2rem, (1.5rem, 0, 0.5rem, 0));
+				.contact-wrapper {
+					flex-direction: column;
+					.contact {
+						width: 100%;
+					}
+					.contact-1 {
+						margin-bottom: 20px;
+					}
+				}
 				.close {
 					&:before {
 						top: 0.875rem;
@@ -101,11 +149,24 @@
 					}
 				}
 			}
+			#location {
+				.google-map {
+					height: 400px;
+				}
+			}
 		}
 
 		@include breakpoint(xsmall) {
 			article {
 				@include padding(2rem, 1.5rem, (1rem, 0, 0.5rem, 0));
+			}
+		}
+
+		@include breakpoint(med) {
+			#location {
+				.google-map {
+					height: 400px;
+				}
 			}
 		}
 	}

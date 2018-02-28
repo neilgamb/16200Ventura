@@ -7,13 +7,13 @@ import pic01 from '../images/pic01.jpg'
 
 class BlogIndex extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    const siteTitle = "16200 Ventura";
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
     return (
       <div>
         <Helmet>
-            <title>{get(this, 'props.data.site.siteMetadata.title')}</title>
+            <title>{siteTitle}</title>
             <meta name="description" content={get(this, 'props.data.site.siteMetadata.description')} />
         </Helmet>
 
