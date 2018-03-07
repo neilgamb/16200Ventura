@@ -47,3 +47,29 @@
 	@import 'layout/header';
 	@import 'layout/main';
 	@import 'layout/footer';
+
+	#lightboxBackdrop{
+		.close_1fc7pjq {
+			padding: 3px;
+			margin: 0px;
+			height: 30px;
+			width: 30px;
+			span {
+				position: absolute;
+				left: 0;
+				top: 0;
+				height: 100%;
+				width: 100%;
+			}
+		}
+		.arrow_b9bbag-o_O-arrow__direction__left_shhpn5-o_O-arrow__size__medium_9f7hgo {
+			height: 60px;
+			width: 50px;
+			top: 55%;
+		}
+		.arrow_b9bbag-o_O-arrow__direction__right_174p6a9-o_O-arrow__size__medium_9f7hgo {
+			height: 60px;
+			width: 50px;
+			top: 55%;
+		}
+	}

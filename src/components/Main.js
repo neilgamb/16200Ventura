@@ -1,12 +1,46 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from 'react';
+import Link from 'gatsby-link';
 import Map from './Map';
 
-import pic01 from '../images/pic01.jpg'
-import pic02 from '../images/pic02.jpg'
-import pic03 from '../images/pic03.jpg'
+import building from '../images/building.jpg';
+
+import pic01 from '../images/01_outside_street.jpg';
+import pic02 from '../images/02_outside_street.jpg'
+import pic03 from '../images/03_outside_street.jpg'
+import pic04 from '../images/04_outside_street.jpg'
+import pic05 from '../images/05_outside_street.jpg'
+import pic06 from '../images/06_outside_street.jpg'
+import pic07 from '../images/07_inside_elevators.jpg'
+import pic08 from '../images/08_inside.jpg'
+import pic09 from '../images/09_inside.jpg'
+import pic10 from '../images/10_inside.jpg'
+import pic11 from '../images/11_inside.jpg'
+import pic12 from '../images/12_inside.jpg'
+import pic13 from '../images/13_inside.jpg'
+import pic14 from '../images/14_inside.jpg'
+import pic15 from '../images/15_inside.jpg'
+import pic16 from '../images/16_inside.jpg'
+import pic17 from '../images/17_inside.jpg'
+import pic18 from '../images/18_inside.jpg'
+import pic19 from '../images/19_inside.jpg'
+import pic20 from '../images/20_inside.jpg'
+import pic21 from '../images/21_inside.jpg'
+import pic22 from '../images/22_inside.jpg'
+import pic23 from '../images/23_outside_roof.jpg'
+import pic24 from '../images/24_outside_roof.jpg'
+
+import Lightbox from 'react-images';
 
 class Main extends React.Component {
+  closeLightbox(){
+    this.props.closeLightbox();
+  }
+  gotoNext(){
+    this.props.gotoNext();
+  }
+  gotoPrev(){
+    this.props.gotoPrev();
+  }
   render() {
 
     let close = <div className="close" onClick={() => {this.props.onCloseArticle()}}></div>
@@ -16,17 +50,28 @@ class Main extends React.Component {
 
         <article id="building" className={`${this.props.article === 'intro' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">The Building</h2>
-          <span className="image main"><img src={pic01} alt="" /></span>
-          <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+          <span className="image main"><img src={building} alt="" /></span>
+          <p>Located in the heart of Encino on the historic <a href="https://goo.gl/maps/U8Qxu1QWPQL2" target="_blank">Ventura Boulevard, 16200 Ventura</a> is a fresh take on the traditional office experience. Fully remodeled in 2017, the property offers a tenant amenity lounge and kitchen, individual work cubbies, private conference room, renovated bathrooms and upgraded building systems. All with one goal in mind: to improve your work experience.</p>
+          <p>With suite sizes ranging from 200 square feet up to 2,200 square feet, 16200 Ventura offers the flexibility and energy of coworking / executive suites with the professionalism of an institutional office address. Whether you’re just launching your company or looking to expand into a long-term lease, there’s a home for you at 16200 Ventura.</p>
           {close}
         </article>
 
         <article id="gallery" className={`${this.props.article === 'work' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Gallery</h2>
-          <span className="image main"><img src={pic02} alt="" /></span>
-          <p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-          <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
+          {/* <span className="image main"><img src={pic02} alt="" /></span> */}
+          <Lightbox
+            images={[
+              { src: pic01 }, { src: pic02 }, { src: pic03 }, { src: pic04 }, { src: pic05 }, { src: pic06 }, { src: pic07 },
+              { src: pic08 }, { src: pic09 }, { src: pic10 }, { src: pic11 }, { src: pic12 }, { src: pic13 }, { src: pic14 },
+              { src: pic15 }, { src: pic16 }, { src: pic17 }, { src: pic18 }, { src: pic19 }, { src: pic20 }, { src: pic21 },
+              { src: pic22 }, { src: pic23 }, { src: pic24 }         
+               ]}
+            currentImage={this.props.currentImage}
+            isOpen={this.props.isGalleryVisible}
+            onClickPrev={this.gotoPrev.bind(this)}
+            onClickNext={this.gotoNext.bind(this)}
+            onClose={this.closeLightbox.bind(this)}
+          />
           {close}
         </article>
 

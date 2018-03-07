@@ -14,10 +14,16 @@ class Template extends React.Component {
       timeout: false,
       articleTimeout: false,
       article: '',
-      loading: 'is-loading'
+      loading: 'is-loading',
+      isGalleryVisible: false,
+      currentImage: 0
     }
     this.handleOpenArticle = this.handleOpenArticle.bind(this)
     this.handleCloseArticle = this.handleCloseArticle.bind(this)
+    this.handleOpenGallery = this.handleOpenGallery.bind(this)
+    this.handleCloseGallery = this.handleCloseGallery.bind(this)
+    this.handleGoToNext = this.handleGoToNext.bind(this)
+    this.handleGoToPrev = this.handleGoToPrev.bind(this)
   }
 
   componentDidMount () {
@@ -74,6 +80,30 @@ class Template extends React.Component {
 
   }
 
+  handleOpenGallery(){
+    this.setState({
+      isGalleryVisible: true
+    })
+  }
+
+  handleCloseGallery(){
+    this.setState({
+      isGalleryVisible: false
+    })
+  }
+
+  handleGoToNext(){
+    this.setState({
+			currentImage: this.state.currentImage + 1,
+		});
+  }
+
+  handleGoToPrev(){
+    this.setState({
+			currentImage: this.state.currentImage - 1,
+		});
+  }
+
   initMap() {
     var uluru = {lat: -25.363, lng: 131.044};
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -100,13 +130,18 @@ class Template extends React.Component {
 
         <div id="wrapper">
 
-          <Header onOpenArticle={this.handleOpenArticle} timeout={this.state.timeout} />
+          <Header openGallery={this.handleOpenGallery} onOpenArticle={this.handleOpenArticle} timeout={this.state.timeout} />
           <Main
+            isGalleryVisible={this.state.isGalleryVisible}
             isArticleVisible={this.state.isArticleVisible}
             timeout={this.state.timeout}
             articleTimeout={this.state.articleTimeout}
             article={this.state.article}
             onCloseArticle={this.handleCloseArticle}
+            closeLightbox={this.handleCloseGallery}
+            currentImage={this.state.currentImage}
+            gotoNext={this.handleGoToNext}
+            gotoPrev={this.handleGoToPrev}
           />
           <Footer timeout={this.state.timeout} />
 
