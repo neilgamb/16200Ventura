@@ -89,16 +89,16 @@ class Main extends React.Component {
           <h2 className="major">Contact</h2>
             <div className="contact-wrapper">
               <div className="contact contact-1">
-                <h3>PROPERTY OWNER</h3>
-                <p>PETER HORN | <a href="www.soma-capital" className="contact-type">Soma Capital Partners</a></p>
-                <p><a href="tel:1-415-233-9978"><i className="fa fa-phone"></i> 415.233.9978</a></p>
-                <p><a href="mailto:phorn@soma-capital.com?Subject=16200 Ventura"><i className="fa fa-envelope"></i> phorn@soma-capital.com</a></p>
+                <h3>LEASING BROKER</h3>
+                <p>KEVIN FENENBOCK | <a href="https://www2.colliers.com/en" target="_blank" className="contact-type">Colliers International</a></p>
+                <p><a href="tel:1-818-325-4118"><i className="fa fa-phone"></i> 818.325.4118</a></p>
+                <p><a href="mailto:kevin.fenenbock@colliers.com?Subject=16200 Ventura"><i className="fa fa-envelope"></i> kevin.fenenbock@colliers.com</a></p>
               </div>
               <div className="contact contact-2">
                 <h3>PROPERTY MANAGER</h3>
-                <p>SEANA YATES | <a href="www.mosscompany.com" className="contact-type">Moss & Company</a></p>
+                <p>SEANA YATES | <a href="http://www.mosscompany.com" target="_blank" className="contact-type">Moss & Company</a></p>
                 <p><a href="tel:1-818-788-2714"><i className="fa fa-phone"></i> 415.233.9978</a></p>
-                <p><a href="mailto:phorn@seanayates@mosscompany.com?Subject=16200 Ventura"><i className="fa fa-envelope"></i> seanayates@mosscompany.com</a></p>
+                <p><a href="mailto:seanayates@mosscompany.com?Subject=16200 Ventura"><i className="fa fa-envelope"></i> seanayates@mosscompany.com</a></p>
               </div>
             </div>
           {/* <form method="post" action="mailto:neilgamb@gmail.com">

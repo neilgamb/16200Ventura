@@ -24,9 +24,10 @@
 				'opacity #{_duration(article)} ease-in-out',
 				'transform #{_duration(article)} ease-in-out'
 			));
-			@include padding(2.5rem, 2.5rem, (2rem, 0, 1rem, 0));
+			// @include padding(2.5rem, 2.5rem, (2rem, 0, 1rem, 0));
+			padding: 2rem;
 			position: relative;
-			width: 40rem;
+			width: 50rem;
 			max-width: 100%;
 			background-color: transparentize(_palette(bg), 0.15);
 			border-radius: _size(border-radius);
@@ -101,6 +102,21 @@
 				}
 			}
 
+		}
+
+		#building {
+			.image {
+				width: 75%;
+				margin: 0 auto;
+				margin-bottom: 20px;
+				img {
+					filter:brightness(105%);
+				}
+			}
+			p {
+				font-size: .8rem;
+				margin-bottom: 10px;
+			}
 		}
 
 		#location {

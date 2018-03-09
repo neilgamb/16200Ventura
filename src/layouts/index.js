@@ -16,7 +16,8 @@ class Template extends React.Component {
       article: '',
       loading: 'is-loading',
       isGalleryVisible: false,
-      currentImage: 0
+      currentImage: 0,
+      menuOpen: false
     }
     this.handleOpenArticle = this.handleOpenArticle.bind(this)
     this.handleCloseArticle = this.handleCloseArticle.bind(this)
@@ -24,6 +25,7 @@ class Template extends React.Component {
     this.handleCloseGallery = this.handleCloseGallery.bind(this)
     this.handleGoToNext = this.handleGoToNext.bind(this)
     this.handleGoToPrev = this.handleGoToPrev.bind(this)
+    this.handleMenuClick = this.handleMenuClick.bind(this)
   }
 
   componentDidMount () {
@@ -82,13 +84,15 @@ class Template extends React.Component {
 
   handleOpenGallery(){
     this.setState({
-      isGalleryVisible: true
+      isGalleryVisible: true,
+      isArticleVisible: !this.state.isArticleVisible,
     })
   }
 
   handleCloseGallery(){
     this.setState({
-      isGalleryVisible: false
+      isGalleryVisible: false,
+      isArticleVisible: !this.state.isArticleVisible,
     })
   }
 
@@ -102,6 +106,10 @@ class Template extends React.Component {
     this.setState({
 			currentImage: this.state.currentImage - 1,
 		});
+  }
+
+  handleMenuClick(){
+    this.setState({menuOpen: !this.state.menuOpen})
   }
 
   initMap() {
@@ -130,7 +138,12 @@ class Template extends React.Component {
 
         <div id="wrapper">
 
-          <Header openGallery={this.handleOpenGallery} onOpenArticle={this.handleOpenArticle} timeout={this.state.timeout} />
+          <Header 
+            openGallery={this.handleOpenGallery} 
+            onOpenArticle={this.handleOpenArticle} 
+            timeout={this.state.timeout}
+            menuOpen={this.state.menuOpen}
+            handleMenuClick={this.handleMenuClick} />
           <Main
             isGalleryVisible={this.state.isGalleryVisible}
             isArticleVisible={this.state.isArticleVisible}
