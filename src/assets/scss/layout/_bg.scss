@@ -23,10 +23,17 @@
 		color: transparent;
 		background-size: cover;
 		background-position: 50% 50%;
-		background-repeat: none;
+		background-repeat: no-repeat;
 		opacity: 0;
 		z-index: 0;
 		animation: imageAnimation 36s linear infinite 0s; 
+	}
+
+	@include breakpoint(xsmall) {
+		.cb-slideshow li span{
+			background-size: 350px;
+			margin-top: 40px;
+		}
 	}
 
 	.cb-slideshow li div { 
@@ -92,13 +99,14 @@
 		justify-content: center;
 		h3 {
 			position: absolute;
-			bottom: 20%;
+			bottom: 15%;
 			padding: 10px;
 			background: rgba(0, 0, 0, 0.6);
 			border: 1px solid white;
 			opacity: 0;
-			transition: 3000ms;
-			z-index: 5;
+			transition: 2000ms;
+			z-index: 3;
+			margin: 0;
 			a {
 				border: none;
 			}

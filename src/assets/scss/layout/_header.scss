@@ -247,6 +247,7 @@
 						position: fixed;
 						top: 15px;
 						right: 15px;
+						// display: none;
 					}
 				}
 			}
@@ -305,35 +306,25 @@
 					line-height: 1.875;
 				}
 			}
-			// nav {
-			// 	.desktop {
-			// 		display: none;
-			// 	}
-			// }
 		}
-
 		@include breakpoint(xsmall) {
-			// padding: 1.5rem 0;
-
 			.content {
+				width: 100%;
 				.inner {
-					// padding: 2.5rem 0;
+					h1 {
+						width: 100%;
+					}
+					.hamburger_wrapper {
+						// display: block;
+						position: fixed;
+						top: 15px;
+						right: 15px;
+						display: none;
+					}
 				}
 			}
-
-			// nav {
-			// 	.desktop {
-			// 		display: none;
-			// 	}
-			// }
 		}
 		@include breakpoint(xxsmall) {
-			// padding: 1.5rem 0;
 
-			// nav {
-			// 	.desktop {
-			// 		display: none;
-			// 	}
-			// }
 		}
 	}

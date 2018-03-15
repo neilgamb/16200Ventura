@@ -26,7 +26,7 @@ class Template extends React.Component {
       loading: 'is-loading',
       isGalleryVisible: false,
       currentImage: 0,
-      menuOpen: false,
+      menuOpen: true,
       availablity_opacity: 0
     }
     this.handleOpenArticle = this.handleOpenArticle.bind(this)
@@ -58,7 +58,8 @@ class Template extends React.Component {
 
     this.setState({
       isArticleVisible: !this.state.isArticleVisible,
-      article
+      article,
+      availablity_opacity: 0
     })
 
     setTimeout(() => {
@@ -78,7 +79,8 @@ class Template extends React.Component {
   handleCloseArticle() {
 
     this.setState({
-      articleTimeout: !this.state.articleTimeout
+      articleTimeout: !this.state.articleTimeout,
+      availablity_opacity: 1
     })
 
     setTimeout(() => {
