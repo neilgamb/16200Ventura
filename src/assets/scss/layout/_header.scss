@@ -25,7 +25,7 @@
 
 		// new
 		position: fixed;
-		background: none;
+		background: rgba(0, 0, 0, 0.6);
 		top: 0;
 		left: 0;
 		right: 0;
@@ -219,6 +219,9 @@
 				.inner {
 					flex-direction: column;
 				}
+			}
+			ul.mobile {
+				background: rgba(0, 0, 0, .4);
 			}
 		}
 

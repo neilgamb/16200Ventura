@@ -1,10 +1,19 @@
 import React from 'react'
 import '../assets/scss/main.scss'
 import Helmet from 'react-helmet'
+import BackgroundSlideshow from 'react-background-slideshow'
+import ImageResponsive, {Source} from 'react-image-responsive';
 
 import Header from '../components/Header'
 import Main from '../components/Main'
 import Footer from '../components/Footer'
+
+import pic00 from '../images/landing-00.jpg'
+import pic01 from '../images/landing-1.jpg'
+import pic02 from '../images/landing-2.jpg'
+import pic03 from '../images/landing-3.jpg'
+import pic04 from '../images/landing-4.jpg'
+import pic05 from '../images/landing-5.jpg'
 
 class Template extends React.Component {
   constructor(props) {
@@ -17,7 +26,8 @@ class Template extends React.Component {
       loading: 'is-loading',
       isGalleryVisible: false,
       currentImage: 0,
-      menuOpen: false
+      menuOpen: false,
+      availablity_opacity: 0
     }
     this.handleOpenArticle = this.handleOpenArticle.bind(this)
     this.handleCloseArticle = this.handleCloseArticle.bind(this)
@@ -32,6 +42,10 @@ class Template extends React.Component {
     this.timeoutId = setTimeout(() => {
         this.setState({loading: ''});
     }, 100);
+    
+    setTimeout(()=>{
+        this.setState({availablity_opacity: 1})
+    }, 4000);
   }
 
   componentWillUnmount () {
@@ -127,6 +141,10 @@ class Template extends React.Component {
   render() {
     const siteTitle = this.props.data.site.siteMetadata.title
     const siteDescription = this.props.data.site.siteMetadata.description
+    
+    let reveal = {
+      opacity: this.state.availablity_opacity
+    }
 
     return (
       <div className={`body ${this.state.loading} ${this.state.isArticleVisible ? 'is-article-visible' : ''}`}>
@@ -159,8 +177,32 @@ class Template extends React.Component {
           <Footer timeout={this.state.timeout} />
 
         </div>
-        <div id="bg"></div>
-      </div>
+          <div id="bg">
+            <ul className="cb-slideshow">
+              <li>
+                <span>Image 01</span>
+              </li>
+              <li>
+                <span>Image 02</span>
+              </li>
+              <li>
+                <span>Image 03</span>
+              </li>
+              <li>
+                <span>Image 04</span>
+              </li>
+              <li>
+                <span>Image 05</span>
+              </li>
+              <li>
+                <span>Image 06</span>
+              </li>
+            </ul>
+          <div className="availablity-wrapper">
+            <h3 style={reveal}><a href="https://sfbay.craigslist.org/search/sss?query=commercial+real+estate" target="_blank">Check Availability</a></h3>
+          </div>
+          </div>
+        </div>
     )
   }
 }
