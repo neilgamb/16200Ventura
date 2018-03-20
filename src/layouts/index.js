@@ -176,7 +176,7 @@ class Template extends React.Component {
             gotoNext={this.handleGoToNext}
             gotoPrev={this.handleGoToPrev}
           />
-          <Footer timeout={this.state.timeout} />
+          {/* <Footer timeout={this.state.timeout} /> */}
 
         </div>
           <div id="bg">
@@ -201,7 +201,7 @@ class Template extends React.Component {
               </li>
             </ul>
           <div className="availablity-wrapper">
-            <h3 style={reveal}><a href="https://sfbay.craigslist.org/search/sss?query=commercial+real+estate" target="_blank">Check Availability</a></h3>
+            <h3 style={reveal}><a href="http://www.loopnet.com/for-lease/encino-ca/?sk=55327f98f4636ec4774ea84af2d8e1b6" target="_blank">Check Availability</a></h3>
           </div>
           </div>
         </div>

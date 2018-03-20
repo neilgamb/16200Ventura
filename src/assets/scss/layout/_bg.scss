@@ -32,7 +32,7 @@
 	@include breakpoint(xsmall) {
 		.cb-slideshow li span{
 			background-size: 350px;
-			margin-top: 40px;
+			margin-top: 50px;
 		}
 	}
 
@@ -98,8 +98,8 @@
 		align-items: center;
 		justify-content: center;
 		h3 {
-			position: absolute;
-			bottom: 15%;
+			position: fixed;
+			bottom: 60px;
 			padding: 10px;
 			background: rgba(0, 0, 0, 0.6);
 			border: 1px solid white;

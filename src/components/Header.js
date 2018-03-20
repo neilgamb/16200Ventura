@@ -1,6 +1,6 @@
 import React from 'react'
 import HamburgerMenu from 'react-hamburger-menu';
-import logo from '../images/logo.jpeg'
+import logo from '../images/16200 Logo.png'
 
 const Header = (props) => (
     <header id="header" style={props.timeout ? {display: 'none'} : {}}>
@@ -10,6 +10,7 @@ const Header = (props) => (
         <div className="content">
             <div className="inner">
                 <h1>16200 VENTURA</h1>
+                {/* <img src={logo} /> */}
                 {/* <img src={logo}/> */}
                 <p>a new way to office</p>
                 <div className="hamburger_wrapper">
