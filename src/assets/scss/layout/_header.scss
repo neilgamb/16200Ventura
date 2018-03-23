@@ -23,7 +23,6 @@
 		max-width: 100%;
 		text-align: center;
 
-		// new
 		position: fixed;
 		background: rgba(0, 0, 0, 0.6);
 		top: 0;
@@ -31,15 +30,11 @@
 		right: 0;
 		border-style: solid;
 		border-color: _palette(border);
-		// border-top-width: _size(border-width);
-		// border-bottom-width: _size(border-width);
-		padding: 10px 20px;
-		// background: hsla(0, 0%, 0%, 0.5);
+		padding: 10px 20px 5px 20px;
 
 		> * {
 			@include vendor('transition', 'opacity #{_duration(article)} ease-in-out');
 			position: relative;
-			// margin-top: 1.5rem;
 
 			&:before {
 				content: '';
@@ -76,54 +71,75 @@
 			}
 		}
 
-		.content {
-			// border-style: solid;
-			// border-color: _palette(border);
-			// border-top-width: _size(border-width);
-			// border-bottom-width: _size(border-width);
-			// max-width: 100%;
+		.content-wrapper {
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+			max-width: 1500px;
+			margin: 0 auto;
+			.content {
+	
+				.inner {
+					@include vendor('transition', (
+						'max-height #{_duration(intro)} ease',
+						'padding #{_duration(intro)} ease',
+						'opacity #{_duration(article)} ease-in-out'
+					));
+					@include vendor('transition-delay', '0.25s');
+					max-height: 40rem;
+					overflow: hidden;
+					display: flex;
+					align-items: baseline;
+	
+					> :last-child {
+						margin-bottom: 0;
+					}
+	
+					h1 {
+						margin: 0;
+						font-size: 2rem;
+						font-weight: 400;
+					}
+	
+					.logo_wrapper {
+						display: flex;
 
-			.inner {
-				@include vendor('transition', (
-					'max-height #{_duration(intro)} ease',
-					'padding #{_duration(intro)} ease',
-					'opacity #{_duration(article)} ease-in-out'
-				));
-				@include vendor('transition-delay', '0.25s');
-				// padding: 1rem 7rem;
-				max-height: 40rem;
-				overflow: hidden;
-				display: flex;
-				align-items: baseline;
-
-				> :last-child {
-					margin-bottom: 0;
+						.logo_image {
+							position: relative;
+							
+							img {
+								height: 3rem;
+							}
+							.ventura {
+								position: absolute;
+								bottom: 0px;
+								right: -62px;
+								font-size: 1.6rem;
+								font-style: italic;
+							}
+						}
+					}
 				}
-
-				h1 {
+	
+				p {
+					letter-spacing: _font(letter-spacing);
+					font-style: italic;
+					line-height: 2;
 					margin: 0;
-					font-size: 2rem;
-					font-weight: 400;
+					margin-left: 20px;
+				}
+	
+				.hamburger_wrapper {
+					display: none;
 				}
 			}
 
-			p {
-				// text-transform: uppercase;
-				letter-spacing: _font(letter-spacing);
-				font-style: italic;
-				// font-size: 0.8rem;
-				line-height: 2;
-				margin: 0;
-				margin-left: 20px;
-			}
-
-			.hamburger_wrapper {
-				display: none;
-			}
 		}
 
+
 		nav {
-			
+			display: flex;
+			align-items: center;
 			ul {
 				@include vendor('display', 'flex');
 				margin-bottom: 0;
@@ -131,7 +147,6 @@
 				padding-left: 0;
 				border: solid _size(border-width) _palette(border);
 				border-radius: _size(border-radius);
-				// background: hsla(0, 0%, 0%, 0.6);
 
 				li {
 					padding-left: 0;
@@ -144,13 +159,13 @@
 					a {
 						display: block;
 						min-width: 7.5rem;
-						height: 2.75rem;
-						line-height: 2.75rem;
-						padding: 0 1.25rem 0 (1.25rem + _font(letter-spacing));
+						height: 2rem;
+						line-height: 2rem;
 						text-transform: uppercase;
-						letter-spacing: _font(letter-spacing);
-						font-size: 0.8rem;
-						border-bottom: 0;
+						letter-spacing: 0.2rem;
+						font-size: 0.6rem;
+						padding: 0px 1.25rem 0px 1.45rem;
+						border-bottom: 0px;
 
 						&:hover {
 							background-color: _palette(border-bg);
@@ -239,15 +254,16 @@
 					h1 {
 						font-size: 1.5rem;
 					}
-					p {
-						display: none;
+					.logo_wrapper {	
+						img {
+							height: 2rem;
+						}
 					}
 					.hamburger_wrapper {
 						display: block;
 						position: fixed;
 						top: 15px;
 						right: 15px;
-						// display: none;
 					}
 				}
 			}
@@ -298,10 +314,6 @@
 			}
 
 			.content {
-				.inner {
-					// padding: 2.5rem 1rem;
-				}
-
 				p {
 					line-height: 1.875;
 				}
@@ -315,7 +327,6 @@
 						width: 100%;
 					}
 					.hamburger_wrapper {
-						// display: block;
 						position: fixed;
 						top: 15px;
 						right: 15px;

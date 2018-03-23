@@ -201,7 +201,7 @@ class Template extends React.Component {
               </li>
             </ul>
           <div className="availablity-wrapper">
-            <h3 style={reveal}><a href="http://www.loopnet.com/for-lease/encino-ca/?sk=55327f98f4636ec4774ea84af2d8e1b6" target="_blank">Check Availability</a></h3>
+            <h3 style={reveal}><a href="http://www.loopnet.com/Listing/16200-Ventura-Blvd-Encino-CA/11974879/?framed=1" target="_blank">Check Availability</a></h3>
           </div>
           </div>
         </div>
