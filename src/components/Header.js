@@ -16,7 +16,7 @@ const Header = (props) => (
                             <img src={logo}/>
                             <div className="ventura">Ventura</div>
                         </div>
-                        <p>a new way to office</p>
+                        {/* <p>a new way to office</p> */}
                     </div>
                     <div className="hamburger_wrapper">
                     <HamburgerMenu 
@@ -38,7 +38,7 @@ const Header = (props) => (
                     <li><a href="javascript:;" onClick={() => {props.onOpenArticle('about')}}>Location</a></li>
                     <li><a href="javascript:;" onClick={() => {props.onOpenArticle('contact')}}>Contact</a></li>
                 </ul>
-                <ul className="mobile" style={{top: props.menuOpen ? '75px' : '-200px'}}>
+                <ul className="mobile" style={{top: props.menuOpen ? '65px' : '-200px'}}>
                     <li><a href="javascript:;" onClick={() => {props.onOpenArticle('intro')}}>Building</a></li>
                     <li><a href="javascript:;" onClick={() => {props.openGallery()}}>Gallery</a></li>
                     <li><a href="javascript:;" onClick={() => {props.onOpenArticle('about')}}>Location</a></li>

@@ -103,6 +103,7 @@
 	
 					.logo_wrapper {
 						display: flex;
+						width: 400px;
 
 						.logo_image {
 							position: relative;
@@ -112,9 +113,9 @@
 							}
 							.ventura {
 								position: absolute;
-								bottom: 0px;
-								right: -62px;
-								font-size: 1.6rem;
+								bottom: -8px;
+								right: -79px;
+								font-size: 2rem;
 								font-style: italic;
 							}
 						}
@@ -124,7 +125,7 @@
 				p {
 					letter-spacing: _font(letter-spacing);
 					font-style: italic;
-					line-height: 2;
+					line-height: 1.5;
 					margin: 0;
 					margin-left: 20px;
 				}
@@ -312,16 +313,28 @@
 					}
 				}
 			}
+			.content-wrapper{
 
-			.content {
-				p {
-					line-height: 1.875;
+				.content {
+					p {
+						line-height: 1.875;
+					}
+					.inner {
+	
+						.logo_wrapper {
+							margin: 0 auto;
+							width: 200px;
+						}
+					}
 				}
 			}
 		}
 		@include breakpoint(xsmall) {
 			.content {
 				width: 100%;
+				p{
+					display: none;
+				}
 				.inner {
 					h1 {
 						width: 100%;
