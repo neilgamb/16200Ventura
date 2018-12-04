@@ -176,7 +176,7 @@ class Template extends React.Component {
             gotoNext={this.handleGoToNext}
             gotoPrev={this.handleGoToPrev}
           />
-          {/* <Footer timeout={this.state.timeout} /> */}
+           <Footer timeout={this.state.timeout} /> 
 
         </div>
           <div id="bg">
