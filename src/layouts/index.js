@@ -1,19 +1,9 @@
 import React from 'react'
 import '../assets/scss/main.scss'
 import Helmet from 'react-helmet'
-import BackgroundSlideshow from 'react-background-slideshow'
-import ImageResponsive, {Source} from 'react-image-responsive';
 
 import Header from '../components/Header'
 import Main from '../components/Main'
-import Footer from '../components/Footer'
-
-import pic00 from '../images/landing-00.jpg'
-import pic01 from '../images/landing-1.jpg'
-import pic02 from '../images/landing-2.jpg'
-import pic03 from '../images/landing-3.jpg'
-import pic04 from '../images/landing-4.jpg'
-import pic05 from '../images/landing-5.jpg'
 
 class Template extends React.Component {
   constructor(props) {
@@ -38,19 +28,19 @@ class Template extends React.Component {
     this.handleMenuClick = this.handleMenuClick.bind(this)
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.timeoutId = setTimeout(() => {
-        this.setState({loading: ''});
+      this.setState({ loading: '' });
     }, 100);
-    
-    setTimeout(()=>{
-        this.setState({availablity_opacity: 1})
+
+    setTimeout(() => {
+      this.setState({ availablity_opacity: 1 })
     }, 4000);
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     if (this.timeoutId) {
-        clearTimeout(this.timeoutId);
+      clearTimeout(this.timeoutId);
     }
   }
 
@@ -98,38 +88,38 @@ class Template extends React.Component {
 
   }
 
-  handleOpenGallery(){
+  handleOpenGallery() {
     this.setState({
       isGalleryVisible: true,
       isArticleVisible: !this.state.isArticleVisible,
     })
   }
 
-  handleCloseGallery(){
+  handleCloseGallery() {
     this.setState({
       isGalleryVisible: false,
       isArticleVisible: !this.state.isArticleVisible,
     })
   }
 
-  handleGoToNext(){
+  handleGoToNext() {
     this.setState({
-			currentImage: this.state.currentImage + 1,
-		});
+      currentImage: this.state.currentImage + 1,
+    });
   }
 
-  handleGoToPrev(){
+  handleGoToPrev() {
     this.setState({
-			currentImage: this.state.currentImage - 1,
-		});
+      currentImage: this.state.currentImage - 1,
+    });
   }
 
-  handleMenuClick(){
-    this.setState({menuOpen: !this.state.menuOpen})
+  handleMenuClick() {
+    this.setState({ menuOpen: !this.state.menuOpen })
   }
 
   initMap() {
-    var uluru = {lat: -25.363, lng: 131.044};
+    var uluru = { lat: -25.363, lng: 131.044 };
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 4,
       center: uluru
@@ -143,7 +133,7 @@ class Template extends React.Component {
   render() {
     const siteTitle = this.props.data.site.siteMetadata.title
     const siteDescription = this.props.data.site.siteMetadata.description
-    
+
     let reveal = {
       opacity: this.state.availablity_opacity
     }
@@ -151,16 +141,16 @@ class Template extends React.Component {
     return (
       <div className={`body ${this.state.loading} ${this.state.isArticleVisible ? 'is-article-visible' : ''}`}>
         <Helmet>
-            <title>{siteTitle}</title>
-            <meta name="description" content={siteDescription} />
-            <script src="https://use.fontawesome.com/9be3235021.js"></script>
+          <title>{siteTitle}</title>
+          <meta name="description" content={siteDescription} />
+          <script src="https://use.fontawesome.com/9be3235021.js"></script>
         </Helmet>
 
         <div id="wrapper">
 
-          <Header 
-            openGallery={this.handleOpenGallery} 
-            onOpenArticle={this.handleOpenArticle} 
+          <Header
+            openGallery={this.handleOpenGallery}
+            onOpenArticle={this.handleOpenArticle}
             timeout={this.state.timeout}
             menuOpen={this.state.menuOpen}
             handleMenuClick={this.handleMenuClick} />
@@ -176,35 +166,34 @@ class Template extends React.Component {
             gotoNext={this.handleGoToNext}
             gotoPrev={this.handleGoToPrev}
           />
-           <Footer timeout={this.state.timeout} /> 
 
         </div>
-          <div id="bg">
-            <ul className="cb-slideshow">
-              <li>
-                <span>Image 01</span>
-              </li>
-              <li>
-                <span>Image 02</span>
-              </li>
-              <li>
-                <span>Image 03</span>
-              </li>
-              <li>
-                <span>Image 04</span>
-              </li>
-              <li>
-                <span>Image 05</span>
-              </li>
-              <li>
-                <span>Image 06</span>
-              </li>
-            </ul>
+        <div id="bg">
+          <ul className="cb-slideshow">
+            <li>
+              <span>Image 01</span>
+            </li>
+            <li>
+              <span>Image 02</span>
+            </li>
+            <li>
+              <span>Image 03</span>
+            </li>
+            <li>
+              <span>Image 04</span>
+            </li>
+            <li>
+              <span>Image 05</span>
+            </li>
+            <li>
+              <span>Image 06</span>
+            </li>
+          </ul>
           <div className="availablity-wrapper">
             <h3 style={reveal}><a href="http://www.loopnet.com/Listing/16200-Ventura-Blvd-Encino-CA/11974879/?framed=1" target="_blank">Check Availability</a></h3>
           </div>
-          </div>
         </div>
+      </div>
     )
   }
 }
